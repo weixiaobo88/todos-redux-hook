@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import TodoList from "../components/TodoList";
+import { INIT_TODOS } from "../constants/constants";
 
 class TodoContainer extends Component {
   render() {
+    const todoList = INIT_TODOS;
+
     return (
       <div>
         TodoContainer
-        <TodoList />
+        <TodoList todoList={todoList} />
       </div>
     );
   }
