@@ -1,5 +1,5 @@
 .box {
-  padding: 5px 5px 5px 20px;
+  padding: 5px 20px 5px 20px;
   border: 1px solid #cccccc;
   margin-bottom: 5px;
   border-radius: 4px;
@@ -11,4 +11,8 @@
 
 .box.done {
   text-decoration: line-through;
+}
+
+.times {
+  float: right;
 }

@@ -10,11 +10,13 @@ class TodoList extends Component {
       <React.Fragment>
         <h2>TodoList</h2>
         <div className="container">
-          {todoList.map((todo) => (
+          {todoList.map((todo, index) => (
             <Todo
               key={todo.index}
+              index={index}
               todo={todo}
               onMarkDone={this.props.onMarkDone}
+              onDelete={this.props.onDelete}
             />
           ))}
         </div>
@@ -26,6 +28,7 @@ class TodoList extends Component {
 TodoList.propTypes = {
   todoList: PropTypes.array,
   onMarkDone: PropTypes.func,
+  onDelete: PropTypes.func,
 };
 
 export default TodoList;
