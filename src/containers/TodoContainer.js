@@ -11,6 +11,7 @@ class TodoContainer extends Component {
 
     this.onMarkDone = this.onMarkDone.bind(this);
     this.onDelete = this.onDelete.bind(this);
+    this.onAdd = this.onAdd.bind(this);
 
     this.state = {
       todoList: INIT_TODOS,
@@ -38,16 +39,31 @@ class TodoContainer extends Component {
     });
   }
 
+  onAdd(todoValue) {
+    const { todoList } = this.state;
+
+    const updatedTodoList = update(todoList, {
+      $push: [{
+        index: todoList.length,
+        value: todoValue,
+        done: false,
+      }],
+    });
+    
+    this.setState({
+      todoList: updatedTodoList,
+    });
+  }
+
   render() {
     return (
       <div>
-        TodoContainer
         <TodoList
           todoList={this.state.todoList}
           onMarkDone={this.onMarkDone}
           onDelete={this.onDelete}
         />
-        <TodoForm />
+        <TodoForm onAdd={this.onAdd} />
       </div>
     );
   }
