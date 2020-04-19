@@ -4,3 +4,11 @@
   margin-bottom: 5px;
   border-radius: 4px;
 }
+
+.box:hover {
+  cursor: pointer;
+}
+
+.box.done {
+  text-decoration: line-through;
+}
