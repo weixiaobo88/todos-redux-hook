@@ -5,16 +5,13 @@ import "./Todo.css";
 class Todo extends Component {
   constructor(props) {
     super(props);
-
-    this.onClickDone = this.onClickDone.bind(this);
-    this.onClickDelete = this.onClickDelete.bind(this);
   }
 
   onClickDone() {
     const { index, onMarkDone } = this.props;
     onMarkDone(index);
   }
-  
+
   onClickDelete(event) {
     event.stopPropagation();
     const { onDelete, index } = this.props;
