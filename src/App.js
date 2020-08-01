@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import TodoContainer from "./containers/TodoContainer";
+import TodoListContainer from "./containers/TodoListContainer";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <p>Hello React!</p>
       </header>
-      <TodoContainer />
+      <TodoListContainer />
     </div>
   );
 }

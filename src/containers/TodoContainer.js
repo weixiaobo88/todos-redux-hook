@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import TodoList from "../components/TodoList";
 import { INIT_TODOS } from "../constants/constants";
 import update from "immutability-helper";
-import TodoForm from "../components/TodoForm";
+import TodoForm from "../components/TodoForm/TodoForm";
 
 class TodoContainer extends Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class TodoContainer extends Component {
         done: false,
       }],
     });
-    
+
     this.setState({
       todoList: updatedTodoList,
     });

@@ -7,12 +7,12 @@ class Todo extends Component {
     super(props);
   }
 
-  onClickDone() {
+  onClickDone = () => {
     const { index, onMarkDone } = this.props;
     onMarkDone(index);
   }
 
-  onClickDelete(event) {
+  onClickDelete = (event) => {
     event.stopPropagation();
     const { onDelete, index } = this.props;
     onDelete(index);
@@ -24,7 +24,7 @@ class Todo extends Component {
 
     return (
       <div className={`box ${todoClass}`} onClick={this.onClickDone}>
-        {todo.value}
+        {todo.text}
         <span className="times" onClick={this.onClickDelete}>&times;</span>
       </div>
     );
@@ -33,10 +33,10 @@ class Todo extends Component {
 
 Todo.propTypes = {
   todo: PropTypes.shape({
-    index: PropTypes.number,
     value: PropTypes.string,
     done: PropTypes.bool,
   }),
+  index: PropTypes.number,
   onMarkDone: PropTypes.func,
   onDelete: PropTypes.func,
 };
