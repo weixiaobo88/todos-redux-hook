@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Todo from "./Todo";
-import "../shared/styles/main.css";
+import "./Todo.css";
 
 class TodoList extends Component {
   render() {
@@ -9,7 +9,7 @@ class TodoList extends Component {
     return (
       <React.Fragment>
         <h2>TodoList</h2>
-        <div className="container">
+        <div className="todo-container">
           {todoList.map((todo, index) => (
             <Todo
               key={todo.index}

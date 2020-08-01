@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "../shared/styles/main.css";
 import "./TodoForm.css";
 
 class TodoForm extends Component {
@@ -20,8 +19,9 @@ class TodoForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit} className="container">
+      <form onSubmit={this.onSubmit} className="form-container">
         <input ref={this.textInputRef} placeholder="input a new todo here..." />
+        <input className='submit' type="submit" value="add"/>
       </form>
     );
   }

@@ -11,3 +11,16 @@ form button {
 button:hover {
   cursor: pointer;
 }
+
+.form-container {
+  margin: 10px 200px;
+  padding: 30px 20px;
+  text-align: left;
+  display: flex;
+}
+
+.form-container .submit {
+  width: 50px;
+  min-width: fit-content;
+  margin-left: 20px;
+}
