@@ -7,25 +7,25 @@ class Todo extends Component {
     super(props);
   }
 
-  onClickDone = () => {
-    const { index, onMarkDone } = this.props;
-    onMarkDone(index);
-  }
+  markTodo = () => {
+    const { index, onMark } = this.props;
+    onMark(index);
+  };
 
-  onClickDelete = (event) => {
+  deleteTodo = (event) => {
     event.stopPropagation();
     const { onDelete, index } = this.props;
     onDelete(index);
-  }
+  };
 
   render() {
     const { todo } = this.props;
     let todoClass = todo.done ? "done" : "undone";
 
     return (
-      <div className={`box ${todoClass}`} onClick={this.onClickDone}>
+      <div className={`box ${todoClass}`} onClick={this.markTodo}>
         {todo.text}
-        <span className="times" onClick={this.onClickDelete}>&times;</span>
+        <span className="times" onClick={this.deleteTodo}>&times;</span>
       </div>
     );
   }
@@ -37,7 +37,7 @@ Todo.propTypes = {
     done: PropTypes.bool,
   }),
   index: PropTypes.number,
-  onMarkDone: PropTypes.func,
+  onMark: PropTypes.func,
   onDelete: PropTypes.func,
 };
 

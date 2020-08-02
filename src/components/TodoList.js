@@ -13,10 +13,10 @@ class TodoList extends Component {
                 <div className="todo-container">
                     {todoList.map((todo, index) => (
                         <Todo
-                            key={todo.index}
+                            key={index}
                             index={index}
                             todo={todo}
-                            onMarkDone={this.props.updateTodo}
+                            onMark={this.props.markTodo}
                             onDelete={this.props.deleteTodo}
                         />
                     ))}
@@ -29,7 +29,7 @@ class TodoList extends Component {
 
 TodoList.propTypes = {
     todoList: PropTypes.array,
-    updateTodo: PropTypes.func,
+    markTodo: PropTypes.func,
     deleteTodo: PropTypes.func,
 };
 
