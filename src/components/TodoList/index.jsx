@@ -1,15 +1,15 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
-import Todo from "./Todo/Todo";
-import "./Todo/Todo.css";
-import TodoFormContainer from "../containers/TodoFormContainer";
+import Todo from "../Todo/Todo";
+import "./TodoList.css";
+import TodoFormContainer from "../../containers/TodoFormContainer";
 
 class TodoList extends Component {
     render() {
         const {todoList} = this.props;
         return (
             <React.Fragment>
-                <h2>TodoList</h2>
+                <h2 className="todo-header">TodoList</h2>
                 <div className="todo-container">
                     {todoList.map((todo, index) => (
                         <Todo
