@@ -3,10 +3,6 @@ import PropTypes from "prop-types";
 import "./Todo.css";
 
 class Todo extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   markTodo = () => {
     const { index, onMark } = this.props;
     onMark(index);

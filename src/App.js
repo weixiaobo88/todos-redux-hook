@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import {Route, Router} from "react-router";
 import { createBrowserHistory } from "history";
 import TodoListContainer from "./containers/TodoListContainer";
 import DoneListContainer from "./containers/DoneListContainer";
+import { Router, Route, Link } from "react-router-dom";
 
 const browserHistory = createBrowserHistory();
 
@@ -14,6 +14,10 @@ function App() {
               <p>Hello React!</p>
           </header>
           <Router history={browserHistory}>
+              <ul>
+                  <li><Link to="/">go to list page</Link></li>
+                  <li><Link to="/done">go to done page</Link></li>
+              </ul>
               <Route exact path="/" component={TodoListContainer}/>
               <Route path="/done" component={DoneListContainer}/>
           </Router>
