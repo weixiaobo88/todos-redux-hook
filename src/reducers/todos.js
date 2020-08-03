@@ -1,12 +1,14 @@
+import {ADD_TODO, DELETE_TODO, MARK_TODO} from "../actions";
+
 const todoList = (state = [], action) => {
     switch (action.type) {
-        case 'ADD_TODO':
+        case ADD_TODO:
             return [...state, {text: action.text, done: false}];
-        case 'MARK_TODO':
+        case MARK_TODO:
             return state.map((todo, index) => {
                 return index === action.index ? {text: todo.text, done: !todo.done} : todo;
             });
-        case 'DELETE_TODO':
+        case DELETE_TODO:
             return state.filter((todo, index) => action.index !== index);
         default:
             return state;
