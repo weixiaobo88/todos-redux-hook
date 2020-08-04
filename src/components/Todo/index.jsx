@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./Todo.css";
 
-class Todo extends Component {
+class Index extends Component {
   markTodo = () => {
     const { index, onMark } = this.props;
     onMark(index);
@@ -27,7 +27,7 @@ class Todo extends Component {
   }
 }
 
-Todo.propTypes = {
+Index.propTypes = {
   todo: PropTypes.shape({
     value: PropTypes.string,
     done: PropTypes.bool,
@@ -37,4 +37,4 @@ Todo.propTypes = {
   onDelete: PropTypes.func,
 };
 
-export default Todo;
+export default Index;

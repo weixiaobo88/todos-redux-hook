@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
-import Todo from "../Todo/Todo";
+import Index from "../Todo";
 import "./TodoList.css";
 import TodoFormContainer from "../../containers/TodoFormContainer";
 
@@ -12,7 +12,7 @@ class TodoList extends Component {
                 <h2 className="todo-header">TodoList</h2>
                 <div className="todo-container">
                     {todoList.map((todo, index) => (
-                        <Todo
+                        <Index
                             key={index}
                             index={index}
                             todo={todo}
