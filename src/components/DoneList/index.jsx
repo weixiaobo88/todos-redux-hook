@@ -8,11 +8,11 @@ class DoneList extends Component {
         return (
             <React.Fragment>
                 <h2 className="done-header">Done List</h2>
-                <div className="done-container">
+                <ul className="done-container">
                     {doneList.map((todo, index) => (
                         <li key={index}>{todo.text}</li>
                     ))}
-                </div>
+                </ul>
             </React.Fragment>
         );
     }
