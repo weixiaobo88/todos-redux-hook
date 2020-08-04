@@ -3,9 +3,7 @@ import "./App.css";
 import { createBrowserHistory } from "history";
 import TodoListContainer from "./containers/TodoListContainer";
 import DoneListContainer from "./containers/DoneListContainer";
-import { Router, Route, Link } from "react-router-dom";
-
-const browserHistory = createBrowserHistory();
+import {Route, Link, BrowserRouter as Router} from "react-router-dom";
 
 function App() {
   return (
@@ -13,7 +11,7 @@ function App() {
           <header className="App-header">
               <p>Hello React!</p>
           </header>
-          <Router history={browserHistory}>
+          <Router history={createBrowserHistory()} forceRefresh>
               <ul>
                   <li><Link to="/">go to list page</Link></li>
                   <li><Link to="/done">go to done page</Link></li>
