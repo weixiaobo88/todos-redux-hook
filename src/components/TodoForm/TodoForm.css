@@ -15,8 +15,7 @@ button:hover {
 .form-container {
   margin: 10px 200px;
   padding: 30px 20px;
-  text-align: left;
-  display: flex;
+  text-align: center;
 }
 
 .form-container .submit {
