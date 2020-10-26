@@ -8,30 +8,26 @@ class TodoForm extends Component {
         this.state = {
             text: ''
         };
-
-        this.onSubmit = this.onSubmit.bind(this);
-
-    }
-
-    onSubmit(event) {
-        event.preventDefault();
-        this.props.addTodo(this.state.text);
-        this.setState({
-            text: ''
-        });
     }
 
     handleChange = (event) => {
         this.setState({text: event.target.value});
     };
 
+    addTodoItem = () => {
+        this.props.addTodo(this.state.text);
+        this.setState({
+            text: ''
+        });
+    }
+
     render() {
         return (
-            <form onSubmit={this.onSubmit} className="form-container">
-                <input onChange={this.handleChange} placeholder="input a new todo here..."
+            <div className="form-container">
+                <input className={"item"} onChange={this.handleChange} placeholder="input a new todo here..."
                        value={this.state.text}/>
-                <input className='submit' type="submit" value="add"/>
-            </form>
+                <input className='submit' type="button" value="add" onClick={this.addTodoItem}/>
+            </div>
         );
     }
 }

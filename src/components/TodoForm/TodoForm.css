@@ -18,8 +18,14 @@ button:hover {
   text-align: center;
 }
 
+.form-container .item {
+  width: 450px;
+  padding: 5px;
+}
+
 .form-container .submit {
   width: 50px;
   min-width: fit-content;
   margin-left: 20px;
+  padding: 4px;
 }
