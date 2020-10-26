@@ -10,16 +10,16 @@ export const addTodo = text => {
     }
 };
 
-export const deleteTodo = index => {
+export const deleteTodo = id => {
     return {
         type: DELETE_TODO,
-        index
+        id
     }
 };
 
-export const markTodo = index => {
+export const markTodo = id => {
     return {
         type: MARK_TODO,
-        index
+        id
     }
 };

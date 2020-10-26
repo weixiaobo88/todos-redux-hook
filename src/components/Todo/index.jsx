@@ -4,14 +4,14 @@ import "./Todo.css";
 
 class Todo extends Component {
   markTodo = () => {
-    const { index, onMark } = this.props;
-    onMark(index);
+    const { todo, onMark } = this.props;
+    onMark(todo.id);
   };
 
   deleteTodo = (event) => {
     event.stopPropagation();
-    const { onDelete, index } = this.props;
-    onDelete(index);
+    const { onDelete, todo } = this.props;
+    onDelete(todo.id);
   };
 
   render() {
@@ -32,7 +32,6 @@ Todo.propTypes = {
     value: PropTypes.string,
     done: PropTypes.bool,
   }),
-  index: PropTypes.number,
   onMark: PropTypes.func,
   onDelete: PropTypes.func,
 };

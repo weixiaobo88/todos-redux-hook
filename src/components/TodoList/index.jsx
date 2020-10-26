@@ -11,10 +11,9 @@ class TodoList extends Component {
             <React.Fragment>
                 <h2 className="todo-header">TodoList</h2>
                 <div className="todo-container">
-                    {todoList.map((todo, index) => (
+                    {todoList.map((todo) => (
                         <Todo
-                            key={index}
-                            index={index}
+                            key={todo.id}
                             todo={todo}
                             onMark={this.props.markTodo}
                             onDelete={this.props.deleteTodo}

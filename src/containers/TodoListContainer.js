@@ -7,11 +7,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    deleteTodo: (index) => {
-        dispatch(deleteTodo(index))
+    deleteTodo: (id) => {
+        dispatch(deleteTodo(id))
     },
-    markTodo: (index) => {
-        dispatch(markTodo(index))
+    markTodo: (id) => {
+        dispatch(markTodo(id))
     }
 });
 
