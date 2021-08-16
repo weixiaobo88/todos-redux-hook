@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import PropTypes from "prop-types";
 import { markTodo, deleteTodo, selectTodoById } from "../reducers/todosSlice";
 import "../styles/todoItem.css";
 
@@ -28,15 +27,6 @@ const TodoItem = ({ id }) => {
       </span>
     </div>
   );
-};
-
-TodoItem.propTypes = {
-  todo: PropTypes.shape({
-    value: PropTypes.string,
-    done: PropTypes.bool,
-  }),
-  onMark: PropTypes.func,
-  onDelete: PropTypes.func,
 };
 
 export default TodoItem;
