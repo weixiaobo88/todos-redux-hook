@@ -1,0 +1,41 @@
+import React from "react";
+import PropTypes from "prop-types";
+import { useSelector, useDispatch } from "react-redux";
+import { markTodo, deleteTodo, selectTodoById } from "./todosSlice";
+
+const Todo = ({ id }) => {
+  const todo = useSelector((state) => selectTodoById(state, id));
+
+  const dispatch = useDispatch();
+
+  const onMark = () => {
+    dispatch(markTodo(id));
+  };
+
+  const onDelete = (event) => {
+    event.stopPropagation();
+    dispatch(deleteTodo(id));
+  };
+
+  let todoClass = todo.done ? "done" : "undone";
+
+  return (
+    <div className={`box ${todoClass}`} onClick={onMark}>
+      {todo.text}
+      <span className="times" onClick={onDelete}>
+        &times;
+      </span>
+    </div>
+  );
+};
+
+Todo.propTypes = {
+  todo: PropTypes.shape({
+    value: PropTypes.string,
+    done: PropTypes.bool,
+  }),
+  onMark: PropTypes.func,
+  onDelete: PropTypes.func,
+};
+
+export default Todo;
