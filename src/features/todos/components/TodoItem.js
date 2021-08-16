@@ -2,8 +2,9 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import { markTodo, deleteTodo, selectTodoById } from "../reducers/todosSlice";
+import "../styles/todoItem.css";
 
-const Todo = ({ id }) => {
+const TodoItem = ({ id }) => {
   const todo = useSelector((state) => selectTodoById(state, id));
 
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const Todo = ({ id }) => {
   );
 };
 
-Todo.propTypes = {
+TodoItem.propTypes = {
   todo: PropTypes.shape({
     value: PropTypes.string,
     done: PropTypes.bool,
@@ -38,4 +39,4 @@ Todo.propTypes = {
   onDelete: PropTypes.func,
 };
 
-export default Todo;
+export default TodoItem;
