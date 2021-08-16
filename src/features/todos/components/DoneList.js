@@ -1,7 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
-import { selectDoneList } from "./todosSlice";
+import PropTypes from "prop-types";
+import { selectDoneList } from "../reducers/todosSlice";
 
 const DoneList = () => {
   const doneList = useSelector(selectDoneList);

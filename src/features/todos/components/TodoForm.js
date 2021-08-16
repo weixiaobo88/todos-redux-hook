@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { addTodo } from "./todosSlice";
 import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
+import { addTodo } from "../reducers/todosSlice";
 
 const TodoForm = () => {
   const [text, setText] = useState("");

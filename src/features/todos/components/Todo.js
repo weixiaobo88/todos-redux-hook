@@ -1,7 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
-import { markTodo, deleteTodo, selectTodoById } from "./todosSlice";
+import PropTypes from "prop-types";
+import { markTodo, deleteTodo, selectTodoById } from "../reducers/todosSlice";
 
 const Todo = ({ id }) => {
   const todo = useSelector((state) => selectTodoById(state, id));

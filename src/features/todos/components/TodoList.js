@@ -4,7 +4,8 @@ import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
-import { selectTodoIds } from "./todosSlice";
+import { selectTodoIds } from "../reducers/todosSlice";
+import "../styles/todoList.css";
 
 const TodoList = () => {
   const todoIds = useSelector(selectTodoIds);

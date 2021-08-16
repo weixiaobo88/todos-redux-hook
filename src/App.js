@@ -1,7 +1,8 @@
 import React from "react";
-import TodoList from "./features/todos/TodoList";
-import DoneList from "./features/todos/DoneList";
+import TodoList from "./features/todos/components/TodoList";
+import DoneList from "./features/todos/components/DoneList";
 import NotFoundPage from "./features/notfound/NotFoundPage";
+import "./features/todos/styles/app.css";
 import {
   Route,
   Link,
