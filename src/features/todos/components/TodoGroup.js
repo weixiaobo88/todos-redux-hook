@@ -1,13 +1,21 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import PropTypes from "prop-types";
 import TodoItem from "./TodoItem";
-import { selectTodoIds } from "../reducers/todosSlice";
+import { selectTodoIds, getAllTodos } from "../reducers/todosSlice";
+import { getTodoList } from "../../../apis/todosAPI";
 import "../styles/todoList.css";
-  
+
 const TodoGroup = () => {
   const todoIds = useSelector(selectTodoIds);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getTodoList().then((response) => {
+      dispatch(getAllTodos(response.data));
+    });
+  }, [dispatch]);
 
   return (
     <React.Fragment>

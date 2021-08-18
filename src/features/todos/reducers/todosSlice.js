@@ -37,10 +37,14 @@ const todosSlice = createSlice({
     deleteTodo(state, action) {
       todosAdapter.removeOne(state, action.payload);
     },
+    getAllTodos(state, action) {
+      todosAdapter.setAll(state, action.payload);
+    },
   },
 });
 
-export const { addTodo, markTodo, deleteTodo } = todosSlice.actions;
+export const { addTodo, markTodo, deleteTodo, getAllTodos } =
+  todosSlice.actions;
 
 export default todosSlice.reducer;
 
