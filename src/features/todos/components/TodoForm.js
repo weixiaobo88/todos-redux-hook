@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import { addTodo } from "../reducers/todosSlice";
+import { addNewTodo } from "../../../apis/todosAPI";
 
 const TodoForm = () => {
   const [text, setText] = useState("");
@@ -10,7 +11,9 @@ const TodoForm = () => {
   const handleChange = (event) => setText(event.target.value);
 
   const addTodoItem = () => {
-    dispatch(addTodo(text));
+    addNewTodo(text).then((response) => {
+      dispatch(addTodo(response.data));
+    });
     setText("");
   };
 

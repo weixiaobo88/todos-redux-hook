@@ -3,36 +3,21 @@ import {
   createSelector,
   createEntityAdapter,
 } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from "uuid";
 
 const todosAdapter = createEntityAdapter();
 
-const todoExampleId = uuidv4();
-const initialState = todosAdapter.getInitialState({
-  ids: [todoExampleId],
-  entities: {
-    [todoExampleId]: {
-      id: todoExampleId,
-      text: "todo example",
-      done: false,
-    },
-  },
-});
-
 const todosSlice = createSlice({
   name: "todos",
-  initialState,
+  initialState: todosAdapter.getInitialState(),
   reducers: {
     addTodo(state, action) {
-      todosAdapter.addOne(state, {
-        id: uuidv4(),
-        text: action.payload,
-        done: false,
-      });
+      todosAdapter.addOne(state, action.payload);
     },
     markTodo(state, action) {
-      const todo = state.entities[action.payload];
-      todo.done = !todo.done;
+      todosAdapter.updateOne(state, {
+        id: action.payload.id,
+        changes: action.payload,
+      });
     },
     deleteTodo(state, action) {
       todosAdapter.removeOne(state, action.payload);
