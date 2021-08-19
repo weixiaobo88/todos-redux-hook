@@ -4,6 +4,7 @@ import TodoList from "./features/todos/components/TodoList";
 import DoneList from "./features/todos/components/DoneList";
 import NotFoundPage from "./features/notfound/NotFoundPage";
 import "./features/todos/styles/app.css";
+import "antd/dist/antd.css";
 
 function App() {
   return (

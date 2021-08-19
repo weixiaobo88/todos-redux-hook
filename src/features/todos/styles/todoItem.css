@@ -16,3 +16,8 @@
 .times {
   float: right;
 }
+
+.edit-icon {
+  margin-top: 8px;
+  margin-left: 10px;
+}

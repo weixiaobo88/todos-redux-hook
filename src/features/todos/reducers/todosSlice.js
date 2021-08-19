@@ -25,10 +25,16 @@ const todosSlice = createSlice({
     getAllTodos(state, action) {
       todosAdapter.setAll(state, action.payload);
     },
+    updateTodoText(state, action) {
+      todosAdapter.updateOne(state, {
+        id: action.payload.id,
+        changes: action.payload,
+      });
+    },
   },
 });
 
-export const { addTodo, markTodo, deleteTodo, getAllTodos } =
+export const { addTodo, markTodo, deleteTodo, getAllTodos, updateTodoText } =
   todosSlice.actions;
 
 export default todosSlice.reducer;
