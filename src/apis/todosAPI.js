@@ -8,11 +8,10 @@ export const addNewTodo = (text) => {
   return api.post("/todos", { text });
 };
 
-export const updateTodoItem = (id, doneStatus) => {
-  return api.put(`/todos/${id}`, doneStatus);
+export const updateTodoItem = (id, doneItem) => {
+  return api.put(`/todos/${id}`, doneItem);
 };
 
 export const deleteTodoItem = (id) => {
   return api.delete(`/todos/${id}`);
 };
-

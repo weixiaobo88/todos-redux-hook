@@ -7,7 +7,8 @@ const prod = {
 
 const dev = {
   url: {
-    API_URL: "https://5fd06b911f23740016631881.mockapi.io/api/",
+    // API_URL: "https://5fd06b911f23740016631881.mockapi.io/api/",
+    API_URL: "http://localhost:8080",
   },
 };
 

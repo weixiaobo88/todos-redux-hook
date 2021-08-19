@@ -11,7 +11,7 @@ const TodoItem = ({ id }) => {
   const dispatch = useDispatch();
 
   const onMark = () => {
-    updateTodoItem(id, { done: !todo.done }).then((response) => {
+    updateTodoItem(id, { id, text: todo.text, done: !todo.done }).then((response) => {
       dispatch(markTodo(response.data));
     });
   };
